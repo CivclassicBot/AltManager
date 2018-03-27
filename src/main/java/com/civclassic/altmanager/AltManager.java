@@ -42,7 +42,7 @@ public class AltManager extends ACivMod implements Listener {
 	
 	public void onEnable() {
 		instance = this;
-		if(Bukkit.getPluginManager().isPluginEnabled("ExilePearl")) {
+		if(Bukkit.getPluginManager().isPluginEnabled("PrisonPearl")) {
 			prisonHandler = new ExilePearlHandler(this);
 		} else {
 			Bukkit.getPluginManager().disablePlugin(this);

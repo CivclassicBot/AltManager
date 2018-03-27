@@ -29,11 +29,6 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>com.devotedmc</groupId>
-            <artifactId>ExilePearl</artifactId>
-            <version>1.2.4-SNAPSHOT</version>
-        </dependency>
-        <dependency>
             <groupId>com.programmerdan.minecraft</groupId>
             <artifactId>banstick</artifactId>
             <version>1.0.3</version>
@@ -44,6 +39,11 @@
             <artifactId>CivModCore</artifactId>
             <version>1.6.2</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+        	<groupId>vg.civcraft.mc</groupId>
+        	<artifactId>PrisonPearl</artifactId>
+        	<version>3.1.1</version>
         </dependency>
     </dependencies>
 

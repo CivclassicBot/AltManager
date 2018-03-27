@@ -8,8 +8,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 
-import com.devotedmc.ExilePearl.ExilePearlPlugin;
-import com.devotedmc.ExilePearl.event.PlayerPearledEvent;
+import vg.civcraft.mc.prisonpearl.PrisonPearlPlugin;
+import vg.civcraft.mc.prisonpearl.events.PrisonPearlEvent;
 
 public class ExilePearlHandler extends ImprisonmentHandler {
 
@@ -18,8 +18,8 @@ public class ExilePearlHandler extends ImprisonmentHandler {
 	}
 
 	@EventHandler
-	public void onExilePearl(PlayerPearledEvent event) {
-		UUID imprisoned = event.getPearl().getPlayerId();
+	public void onExilePearl(PrisonPearlEvent event) {
+		UUID imprisoned = event.getPrisonPearl().getImprisonedId();
 		Set<UUID> alts = plugin.getAlts(imprisoned);
 		int count = getImprisonedCount(alts);
 		if(count < plugin.getMaxImprisoned()) {
@@ -38,7 +38,7 @@ public class ExilePearlHandler extends ImprisonmentHandler {
 	public int getImprisonedCount(Set<UUID> alts) {
 		Set<UUID> imprisoned = new HashSet<UUID>();
 		for(UUID alt : alts) {
-			if(ExilePearlPlugin.getApi().isPlayerExiled(alt)) {
+			if(PrisonPearlPlugin.getPrisonPearlManager().isImprisoned(alt)) {
 				imprisoned.add(alt);
 			}
 		}
@@ -47,6 +47,6 @@ public class ExilePearlHandler extends ImprisonmentHandler {
 
 	@Override
 	public boolean isImprisoned(UUID player) {
-		return ExilePearlPlugin.getApi().isPlayerExiled(player);
+		return PrisonPearlPlugin.getPrisonPearlManager().isImprisoned(player);
 	}
 }

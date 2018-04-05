@@ -41,9 +41,9 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-        	<groupId>vg.civcraft.mc</groupId>
-        	<artifactId>PrisonPearl</artifactId>
-        	<version>3.1.1</version>
+          <groupId>vg.civcraft.mc.prisonpearl</groupId>
+          <artifactId>PrisonPearl</artifactId>
+          <version>3.1.1</version>
         </dependency>
     </dependencies>
 
